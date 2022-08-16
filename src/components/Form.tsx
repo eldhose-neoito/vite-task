@@ -50,11 +50,10 @@ const Form = () => {
     if (event.target.value) {
       let index = parseInt(event.target.name.slice(1));
       paramList[index] = event.target.value;
+    } else if (event.target.value == "") {
+      let index = parseInt(event.target.name.slice(1));
+      paramList[index] = null;
     }
-    // else if (event.target.value == "") {
-    //   let index = parseInt(event.target.name.slice(1));
-    //   paramList[index] = null;
-    // }
     setParamList(paramList);
 
     dispatch(
